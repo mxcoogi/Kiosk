@@ -46,7 +46,6 @@ public class Kiosk implements Interactable{
     }
 
 
-
     @Override
     public void showMenu() {
         for(Item item : itemList){
@@ -63,7 +62,8 @@ public class Kiosk implements Interactable{
             String temp = sc.nextLine();
             price = Integer.parseInt(temp);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("올바른 가격을 입력 해 주세요");
+            System.out.println("올바른 가격을 입력해 주세요");
+            return ;
         }
         System.out.print("메뉴 설명: ");
         description =  sc.nextLine();
