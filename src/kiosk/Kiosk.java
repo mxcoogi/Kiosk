@@ -10,12 +10,10 @@ public class Kiosk implements Interactable{
 
     private Map<Integer, Menu> menuList;
     private static int cnt=0;
-    private Scanner sc;
     private String temp;
 
     public Kiosk(){
         menuList = new LinkedHashMap<>();
-        sc = new Scanner(System.in);
         init();
     }
 
@@ -54,6 +52,7 @@ public class Kiosk implements Interactable{
             int input = InputValidator.isValid();
             if(input == 0) System.exit(-1); ;
             menuList.get(input).showItem();
+            System.out.println("메뉴판보기 끝");
         } catch (Exception e) {
             System.out.println("잘못된 입력 입니다");
         }
