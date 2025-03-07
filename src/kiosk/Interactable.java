@@ -2,7 +2,8 @@ package kiosk;
 
 public interface Interactable {
 
+
+    void init();
     void start();
-    void input();
-    void output();
+    void showMenu();
 }
