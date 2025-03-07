@@ -6,7 +6,8 @@ import java.util.Map;
 public class Menu {
 
     private String category;
-    private Map<Item, Boolean> menuList;
+    private Map<Integer, Item> menuList;
+    private int size = 0;
 
     public Menu(String category){
         this.category = category;
@@ -18,14 +19,12 @@ public class Menu {
     }
 
     public void AddItem(Item item){
-        menuList.put(item, true);
+        menuList.put(++size, item);
     }
 
     public void showItem(){
         menuList.forEach((key, value) -> {
-            if(value){
-                System.out.println(key.toString());
-            }
+            System.out.println(key + ". " + value.toString());
         });
     }
 }

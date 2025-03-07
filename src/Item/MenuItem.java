@@ -8,7 +8,7 @@ public class MenuItem extends Item {
 
     @Override
     public String toString() {
-        return String.format("%-15s | W %-5.1f | %s", getName(), getPrice()/1000.0, getDescription());
+        return String.format("%-20s | W %-5.1f | %s", getName(), getPrice()/1000.0, getDescription());
     }
 
 }
