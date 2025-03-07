@@ -4,6 +4,8 @@ import Item.Item;
 import java.util.*;
 
 import Item.*;
+import io.InputValidator;
+
 public class Kiosk implements Interactable{
 
     private Map<Integer, Menu> menuList;
@@ -49,16 +51,13 @@ public class Kiosk implements Interactable{
         menuList.keySet().forEach(s -> System.out.println(s +". "+menuList.get(s).getCategory()));
         System.out.print("확인할 카테고리 메뉴의 번호를 입력해 주세요 or 0. 종료 : ");
         try{
-            temp = sc.nextLine();
-            if(temp.equals("0")) System.exit(-1); ;
-            menuList.get(Integer.parseInt(temp)).showItem();
+            int input = InputValidator.isValid();
+            if(input == 0) System.exit(-1); ;
+            menuList.get(input).showItem();
         } catch (Exception e) {
             System.out.println("잘못된 입력 입니다");
         }
     }
 
-    private void addMenu(){
-
-    }
 
 }
